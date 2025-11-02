@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-silicoid}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-silicoidpass}
+      POSTGRES_DB: ${POSTGRES_DB:-silicoid_db}
+    ports:
+      - '5432:5432'
+  control-plane:
+    build:
+      context: ./apps/control-plane
+      dockerfile: Dockerfile
+    ports:
+      - '8001:8001'
+  runner:
+    build:
+      context: ./apps/runner
+      dockerfile: Dockerfile
+    ports:
+      - '8002:8002'
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'

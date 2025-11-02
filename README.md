@@ -1,1 +1,1 @@
-# silicoid
+# Silicoid Starter\nGenerated: 2025-11-02T19:28:37.405283 UTC\n\nSee instructions in chat to set up OAuth and Render.\n

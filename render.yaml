@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: silicoid-control-plane
+    env: docker
+    plan: free
+    dockerfilePath: apps/control-plane/Dockerfile
+    healthCheckPath: /healthz
+  - type: worker
+    name: silicoid-runner
+    env: docker
+    plan: free
+    dockerfilePath: apps/runner/Dockerfile
+  - type: web
+    name: silicoid-web
+    env: docker
+    plan: free
+    dockerfilePath: apps/web/Dockerfile
